@@ -1,0 +1,173 @@
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; 
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    font-size: 24px;
+    text-align: center;
+}
+
+#sectionHeader > header {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 33%;
+}
+
+.card {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 175px;
+    height: 130px;
+    overflow: auto;
+    padding: 14px;
+    margin: 10px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    vertical-align: bottom;
+    background: rgb(255,248,210);
+    text-align: left;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+.card > .solution {
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+    display: block;
+}
+
+.card > p {
+    font-size: 10px;
+}
+
+.card > label {
+    font-weight: bold;
+    font-size: 10px;
+    display: none;
+}
+
+.card > .resource {
+    display: none;
+    font-size: 10px;
+}
+
+
+.card > .control {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 10px;
+    background: rgb(255, 252, 232);
+    border: #aaa;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+body.cardControlOn .card:hover > .control {
+    display: block;
+}
+
+.card > .control > .high,
+.card > .control > .med,
+.card > .control > .low {
+    display: inline-block;
+    width: 44px;
+    border-radius: 9px;
+    padding: 3px;
+    text-align: center;
+}
+
+.card > .control > .high {
+    background: #f2dede;
+    border: 1px solid #d9534f;
+}
+
+.card > .control > .med {
+    background: #fcf8e3;
+    border: 1px solid #f6cd9e;
+}
+
+.card > .control > .low {
+    background: #dff0d8;
+    border: 1px solid #a0e5c0;
+}
+
+
+section {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 33%;
+    min-width: 90px;
+    min-height: 300px;
+    margin: 0;
+    vertical-align: middle;
+    text-align: center;
+}
+
+section + section {
+    border-left: 1px solid #ccc;
+}
+
+section > .card + .card {
+    margin-top: 0;
+}
+
+#default {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+#control {
+    text-align: center;
+ /* display: none;*/
+}
+
+.button {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 16px;
+    margin: 8px;
+    border: 1px solid #666;
+    border-radius: 6px;
+    color: #666;
+    cursor: pointer;
+    background: #eeeeee;
+}
+
+.button:hover {
+    border-color: black;
+    color: black;
+    background: #e0e0e0;
+}
+
+.button.highlight {
+    border-color: #660;
+    background: #fed;
+}
+
+.button.highlight:hover {
+    border-color: #550;
+    background: #edc;
+}
+
+
+#options {
+    margin: 10px auto;
+    text-align: center;
+}
+
+footer {
+    color: #666;
+    text-align: center;
+    margin: 40px;
+    font-size: 12px;
+}

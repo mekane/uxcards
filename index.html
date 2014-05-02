@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+    <title>UX Technique Cards</title>
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="description" content="UX Technique Cards by Melinda Miller &amp; Cate Kompare This work is licensed under the Creative Commons Attribution- NonCommercial-ShareAlike 4.0 International License.">
+</head>
+<body>
+    <div id="sectionHeader">
+        <header>Highest</header>
+        <header>Medium</header>
+        <header>Lowest</header>
+    </div> 
+
+    <section id="highest"></section>
+    <section id="medium"></section>
+    <section id="lowest"></section>
+
+    <header>Drag and Drop Cards to Prioritize</header>
+    <div id="default"></div>
+
+    <div id="control">
+        <div class="button" id="flipAll">Flip All Cards Over</div>
+        <div class="button" id="frontAll">Flip All Cards to Front</div>
+        <div class="button" id="backAll">Flip All Cards to Back</div>
+    </div>
+
+    <div id="options">
+        <input id="cardControl" type="checkbox" value="enabled" />
+        <label for="cardControl">Enable Card Controls</label>
+    </div>
+
+    <footer>
+        UX Technique Cards by Melinda Miller &amp; Cate Kompare.<br/>
+        This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.<br/> 
+        To view a copy of this license, visit <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">http://creativecommons.org/licenses/by-nc-sa/4.0/.</a>
+    </footer>
+
+    <script type="text/x-handlebars-template" id="cardFrontTemplate">
+        <span class="problem">&quot;{{problem}}&quot;</span>
+        <div class="control">
+            <div class="high">High</div>
+            <div class="med">Med</div>
+            <div class="low">Low</div>
+        </div>
+    </script>
+    <script type="text/x-handlebars-template" id="cardBackTemplate">
+        <span class="solution">{{solution}}</span>
+        <hr/>
+        <p>{{text}}</p>
+        <label>Resource:</label>
+        <span class="resource">{{resource}}</span>
+    </script>
+    <script src="js/jquery-2.1.0.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/backbone.js"></script>
+    <script src="js/handlebars.js"></script>
+    <script src="cardText.js"></script>
+    <script src="Card.js"></script>
+    <script src="CardView.js"></script>
+    <script src="AppView.js"></script>
+
+    <script>
+        $(function(){
+            new app.AppView();
+        });
+    </script>
+</body>
+</html>
