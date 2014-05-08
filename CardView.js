@@ -14,12 +14,17 @@ var app = app || {};
             'click .low' : 'prioritizeLow'
         },
 
+        template : {
+            front: Handlebars.compile( $('#cardFrontTemplate').html()), 
+             back: Handlebars.compile( $('#cardBackTemplate').html() )
+        },
+
         initialize : function initialize(){
 
             this.flipped = false;
 
-            this.templateFront = Handlebars.compile( $('#cardFrontTemplate').html() );
-            this.templateBack  = Handlebars.compile( $('#cardBackTemplate').html() );
+            //this.templateFront = Handlebars.compile( $('#cardFrontTemplate').html() );
+            //this.templateBack  = Handlebars.compile( $('#cardBackTemplate').html() );
 
             this.model.on('change', this.render, this);
             this.model.on('remove', this.remove, this);
@@ -65,10 +70,10 @@ var app = app || {};
             var json = this.model.toJSON();
 
             if ( this.flipped ){
-                this.$el.html( this.templateBack(json) ).attr('title', this.model.get('resource'));
+                this.$el.html( this.template.back(json) ).attr('title', this.model.get('resource'));
             }
             else {
-                this.$el.html( this.templateFront(json)).attr('title', 'Click to flip card');
+                this.$el.html( this.template.front(json)).attr('title', 'Click to flip card');
             }
             return this;
         }
