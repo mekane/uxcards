@@ -23,9 +23,6 @@ var app = app || {};
 
             this.flipped = false;
 
-            //this.templateFront = Handlebars.compile( $('#cardFrontTemplate').html() );
-            //this.templateBack  = Handlebars.compile( $('#cardBackTemplate').html() );
-
             this.model.on('change', this.render, this);
             this.model.on('remove', this.remove, this);
 
